@@ -1,0 +1,398 @@
+<html>
+<head>
+<meta name="data-spm" content="a2h0k">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="referrer" content="no-referrer" />
+<meta name="format-detection" content="telephone=no">
+<title>搜库</title>
+<script type="text/javascript" src="//static-new.soku.com/youku/static/soku/inthesky-aone/giantstar/js/jquery.js"></script>
+<script type="text/javascript" src="../js/corsapi.js"></script>
+<!-- v2.5.6 -->
+<link rel="stylesheet" href="https://www.layuicdn.com/layui/css/layui.css" />
+<script src="https://www.layuicdn.com/layui/layui.js"></script>
+<link type="text/css" rel="stylesheet" href="//static-new.soku.com/youku/static/soku/inthesky-aone/giantstar/m/css/reset.css" />
+<link type="text/css" rel="stylesheet" href="//static-new.soku.com/youku/static/soku/inthesky-aone/giantstar/m/css/m.css?v=1.0.0" />
+<link type="text/css" rel="stylesheet" href="//static-new.soku.com/youku/static/soku/inthesky-aone/giantstar/m/css/m_comm.css?v=1.0.0" />
+<link rel="stylesheet" type="text/css" href="//static-new.soku.com/youku/static/soku/inthesky-aone/giantstar/m/css/m_dir.css"/>
+</head>
+<body>
+<div id="bodydiv" class="yk-m">
+	<header class="yk_header">
+	<div class="yk_cont">
+		<div class="yk_wrap">
+			<div class="yk_btn">
+				<a class="m_ico btn_search" onclick="doQuery();"></a>
+			</div>
+			<div class="yk_logo">
+				<a class="" href="javascript:changeApi()" title="切换搜索API"><span class="m_ico ico_soku"></span></a>
+			</div>
+			<div class="yk_search">
+				<div class="yk_so">
+					<input type="text" name="q" id="headq" accesskey="s" autocomplete="off" value="无心法师3" maxlength="30">
+					<a class="m_ico ico_cancel" id="inputcancel" style="display: "></a>
+				</div>
+				<div id="id_xbox"></div>
+			</div>
+		</div>
+	</div>
+</header>
+</div>
+</body>
+<!-- m版UGC大词 -->
+<script type="text/javascript" src="../js/film.js"></script>
+<script type="text/javascript" src="../js/jiexi.js"></script>
+<script type="text/javascript" src="../js/sk-box.js"></script>
+<script>
+//页面加载完成后，绑定事件
+$(function(){
+	XBox.init({
+		'site':51,
+		'cancelId':'inputcancel',
+		'history':true
+	});
+	//获取
+	_search_api=jiexi_apis.filter(function(item,index){
+		return item.searchByKW;
+	});
+	$('#headq').on('click',function(){
+		$('#id_xbox div').first().show();
+		if($('#headq').val().length>0){
+			//suggestByYouku($('#headq').val(), loadSuggest);
+			suggestByIqiyi($('#headq').val(), loadSuggest);
+		}else{
+			loadSuggest([]);
+			XBox.cUpdate();
+			setTimeout(function(){
+				$('.about_list ul li a').filter(function(index,item){
+					return !$(item).parent().hasClass('close');
+				}).off('click').on('click',function(){
+					$('#headq').val($(this).parent().attr('qword'));
+					doQuery();
+				});
+			},250);
+		}
+	});
+	//实时监听输入框变化
+	$('#headq').on('input propertychange',function(){
+		if(!$('.yk_so').hasClass('yk_on'))$('.yk_so').addClass('yk_on')
+		if($('#headq').val().length>0){
+			//suggestByYouku($('#headq').val(), loadSuggest);
+			suggestByIqiyi($('#headq').val(), loadSuggest);
+		}else{
+			XBox.cUpdate();
+			setTimeout(function(){
+				$('.about_list ul li a').filter(function(index,item){
+					return !$(item).parent().hasClass('close');
+				}).off('click').on('click',function(){
+					$('#headq').val($(this).parent().attr('qword'));
+					doQuery();
+				});
+			},250);
+		}
+		if(!$('.yk_so').hasClass('yk_on'))$('.yk_so').addClass('yk_on')
+	});
+	$(window).off('keydown').on('keydown',function(event){
+		switch (event.which) {
+			case 13://enter
+				doQuery();
+				break;
+			case 38://up
+				var ele = $('.about_list ul li.current').prev();
+				if(ele.length==0){
+					ele = $('.about_list ul li').last().prev();
+				}
+				ele.addClass('current').siblings().removeClass('current');
+				break;
+			case 40://down
+				var ele = $('.about_list ul li.current').next();
+				if(ele.length==0 || ele.hasClass('close')){
+					ele = $('.about_list ul li').first();
+				}
+				ele.addClass('current').siblings().removeClass('current');
+				$('#headq').val(ele.attr('qword'));
+				break;
+		}
+	});
+	
+	//加载layerui
+	layui.use(['layer'], function() {
+		kw=GetQueryString('keyword');
+		if(kw){
+			$('#headq').val(kw);
+			doQuery();
+		}
+	});
+});
+
+//加载提示列表
+function loadSuggest(arr){
+	$('.about_list').html('<ul />');
+	var num=['','one','two','three','four','five',]
+	for(var word of arr){
+		$('.about_list ul').append('<li'+(num[word.i]?' class="'+num[word.i]+'"':'')+' qword="'+word.w+'"><a href="javascript:void(0);"><i class="dot" sk_live="word">'+word.i+'</i><span class="name">'+word.w+'</span></a></li>');
+	}
+	$('.about_list ul li').on('mouseenter',function(){
+		$('.about_list ul li').removeClass('current');
+		$(this).addClass('current');
+	})
+	$('.about_list ul li a').filter(function(index,item){
+		return !$(item).parent().hasClass('close');
+	}).off('click').on('click',function(){
+		$('#headq').val($(this).parent().attr('qword'));
+		doQuery();
+	});
+	$('.about_list ul').append('<li class="close" sk_live="close"><a sk_live="close">关闭</a></li>');
+	
+	$('#id_xbox div').first().show();
+}
+
+function GetQueryString(name) {
+	var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)');
+	var r = window.location.search.substr(1).match(reg);
+	if (r != null)
+		return decodeURIComponent(r[2]);
+	return null;
+}
+
+//搜索api
+var searchApi=[searchByYouku,showSerisesByYouku];
+function changeApi(){
+	if($(".yk_logo .m_ico").hasClass('ico_iqiyi')){
+		//切换为优酷
+		$(".yk_logo .m_ico").removeClass('ico_iqiyi').addClass('ico_youku');
+		searchApi=[searchByYouku,showSerisesByYouku];
+	}else {
+		//切换为爱奇艺
+		$(".yk_logo .m_ico").removeClass('ico_youku').addClass('ico_iqiyi');
+		searchApi=[searchByIqiyi,showSerisesByIqiyi];
+	}
+}
+
+function openit(url,auto_play_next=false){
+	open('../video/vip.html?'+(auto_play_next?'auto_play_next=true&':'')+'url='+url);
+}
+
+function doQuery(pageNum=1) {
+	XBox.hide();
+	var kw = $('#headq').val().trim();
+	if(kw==''){
+		layer.msg('请输入搜索关键字',{icon: 2,time: 1500});
+		return;
+	}
+	try{
+		loadingFlag = layer.msg('正在读取数据，请稍候……', { icon: 16, shade: [0.8,'#4C4C4C'],shadeClose:false,time:60000 });
+		searchApi[0](kw, pageNum, function(videos){
+			if(pageNum==1)$('.yk_dir,.yk_result').remove();
+			var words=split2Words(kw);
+			var officialVideos=videos.filter(function(item, index, self){
+				return item.userVideo==false;
+			})
+			var userVideos=videos.filter(function(item, index, self){
+				return item.userVideo==true;
+			})
+			//用户视频
+			if(userVideos.length>0){
+				if(pageNum==1){
+					$('.yk_header').after('<div class="yk_result _sk_content"></div>');
+					$('.yk_result').children().remove();
+				}
+				for(var video of userVideos){
+					var ve= $('<div class="v"></div>');
+					$('.yk_result').append(ve);
+					ve.append('<div class="v-thumb"><div class="v-pic"><img alt="'+video.title+'" src="'+video.thumbUrl+'" title="'+video.title+'"></div><div class="v-mask"></div><div class="v-tagrb"><span class="v-time">'+video.duration+'</span></div></div>');
+					var title=video.title;
+					for(var word of words){
+						title=title.replace(word,'<span class="highlight">'+word+'</span>');
+					}
+					ve.append('<div class="v-meta"><div class="v-title"><a href="javascript:openit(\''+video.url+'\')" title="'+video.title+'">'+title+'</a></div><div class="v-desc"><div class="v-desc-col"><i class="m_ico ico_user"></i>'+video.userName+'</div></div><div class="v-desc"><div class="v-desc-col"><i class="m_ico ico_time"></i><span class="v-num">'+video.publishTime+'</span></div></div></div><a class="v-link-box" title="'+video.title+'" href="javascript:openit(\''+video.url+'\')"></a>');
+					ve.append('<div class="clearfix"></div>');
+				}
+			}
+			$('.yk_result').append('<div class="v-load" onclick="this.remove();doQuery('+(pageNum+1)+');">展开更多</div>');
+			//官方视频
+			if(officialVideos.length>0){
+				var yk_dir=$('<div class="yk_dir" data-type="moreContent"></div>')
+				$('.yk_header').after(yk_dir);
+				for(var video of officialVideos){
+					var direct_direct_touch =$('<div id="direct_touch" class="yk_card" ></div>')
+					yk_dir.append(direct_direct_touch);
+					direct_direct_touch.append('<div class="card_bd clearfix"></div><a class="card_link" href="javascript:openit(\''+video.url+'\')"></a>');
+					direct_direct_touch.find('.card_bd').append('<div class="card_func"><div class="v_img"><img src="'+video.thumbUrl+'"/></div></div>');
+					var title=video.title;
+					for(var word of words){
+						title=title.replace(word,'<span class="highlight">'+word+'</span>');
+					}
+					var tag='';
+					if(video.feature){
+						tag = video.feature.split(' · ').slice(0,2).reverse().concat( video.notice.replace('主演：','').split(' ').slice(0,2).join('/')).join('</span><span>');
+					}else if(video.channel){
+						tag = video.channel.split(',').slice(0,1).concat([video.releaseDate.substring(0,4)]).concat(video.star?video.star.split(';').slice(0,2).join('/'):[]).join('</span><span>');
+					}
+					direct_direct_touch.find('.card_bd').append('<div class="card_info"><div class="v_info"><h2 class="v_title"><a href="#"><span class="name">'+title+'</span></a></h2><div class="v_desc"><p><span>'+tag+'</span></p><p><span class="c_highorange">'+video.stripeBottom+'</span></p></div></div><div class="v_play"><div class="v_btn"><a class="btn_blue" href="javascript:openit(\''+video.url+'\')">播放</a></div><div class="v_pe"><a class="btn_pe" href="javascript:;" data-showid='+video.showId+'>选集</a></div><div class="v_pos"><img src="'+video.source.img+'" /><span>'+video.source.name+'</span></div></div></div>');
+					//选集
+					var ep_box =$('<div class="ep_box" style="height:0px" data-num="'+video.episodeTotal+'"></div>')
+					yk_dir.append(ep_box);
+
+					ep_box.append('<div class="ep_hd"><span class="tit">'+video.title+'</span><span class="act"><a href="javascript:;"><i class="m_ico ico_close"></i></a></span></div><div class="ep_bd"><div class="ep_item"><ul></ul></div></div></div>');
+					var ul=ep_box.find('.ep_bd .ep_item ul');
+					for(var subVideo of video.more){
+						ul.append('<li><a href="javascript:openit(\''+subVideo.url+'\')" class="ep">'+subVideo.title+'</a></li>');
+					}
+				}
+				//选集遮掩div
+				yk_dir.append('<div class="m_mask" style="display:none;"></div>');
+			}
+			//添加其他搜索源
+			if(_search_api.length>0){
+				
+				var yk_dir=$('.yk_dir');
+				if(yk_dir.length==0) {
+					yk_dir=$('<div class="yk_dir" data-type="moreContent"></div>');
+					$('.yk_header').after(yk_dir);
+				}
+				var direct_direct_touch =$('<div id="direct_touch" class="yk_card"><div class="card_bd clearfix"></div></div>')
+				yk_dir.append(direct_direct_touch);
+				direct_direct_touch.find('.card_bd').append('<div class="card_info" style="padding-left: 0px;"><div class="v_info"><h2 class="v_title"><a href="#"><span class="name"><span class="highlight">'+kw+'</span></span></a></h2><div class="v_desc"><p><span>直达接口</span><span>可选集</span><span>自动连播</span></p><p><span class="c_highorange">'+_search_api.length+'个直达接口</span></p></div></div><div class="v_play"></div></div>');
+				var v_play = direct_direct_touch.find('.v_play');
+				for(var api of _search_api){
+					v_play.append('<div class="v_btn"><a class="btn_blue" href="javascript:open(\''+api.url+kw+'\')">'+api.title+'</a></div>&nbsp;');
+				}
+			}
+			
+			//添加各种事件
+			$('div.yk_card .btn_pe').on('click',function(){
+				//选集
+				var ele=$(this).parents('.yk_card').next();
+				if(ele.find('li').length != ele.data('num')){
+					try{
+						loadingFlag = layer.msg('正在读取数据，请稍候……', { icon: 16, shade: 0.01,shadeClose:false,time:60000 });
+						//集数不匹配，则重新生成			
+						searchApi[1]($(this).data('showid'),function(series){			
+							var ul=ele.find('ul');
+							ul.children().remove();
+							for(var subVideo of series){
+								ul.append('<li><a href="javascript:openit(\''+subVideo.url+'\',true)" class="ep">'+subVideo.title+'</a></li>');
+							}
+							ele.data('num',series.length);
+							ele.css('height','');
+							layer.close(loadingFlag);
+						});
+					}catch(err){
+						layer.close(loadingFlag);
+					}
+				}else{
+					ele.css('height','');
+				}
+				//改变链接，点击后跳转至vip解析页面
+				ele.find('ul').find('a').each(function(i,e){
+					if(e.href.startsWith('http')){
+						e.href='javascript:openit("'+e.href+'",true)';
+					}
+				})
+				$('div.m_mask').show();
+				$('body,div.m_mask').bind('mousewheel', function(event, delta) {return false;});
+			});
+			$('div.ep_box .act a').on('click',function(){
+				$(this).parents('.ep_box').css('height',0);
+				$('div.m_mask').hide();
+				$('body,div.m_mask').unbind('mousewheel');	
+			})
+			$('div.m_mask').on('click',function(){
+				$('div.ep_box .act a').trigger('click');
+			})
+			$('div.v,div.yk_card').live('mouseenter',function(){
+				$('div.v').removeClass('current');
+				$(this).addClass('current');
+			});
+			$('div.v,div.yk_card').live('mouseleave',function(){
+				$(this).removeClass('current');
+			});
+			$('div.v,div.yk_card').live('mouseleave',function(){
+				$(this).removeClass('current');
+			});
+			$('.yk_dir a,.yk_result a').each(function(i,e){
+				if(e.href.startsWith('http')){
+					e.href='javascript:openit("'+e.href+'")';
+				}
+			})
+			layer.close(loadingFlag);
+		});
+	}catch(err){
+		layer.close(loadingFlag);
+	}
+}
+</script>
+<style>
+.yk_kubox .about_list li a {
+    height: 24px;
+}
+.card_info .v_pos img {
+    vertical-align: top;
+    margin-top: 9px;
+	margin-right: 3px;
+    height: 16px;
+}
+.ep_box .ep_item li {
+    float: left;
+    position: relative;
+    width: 23%;
+    background: #fff;
+    margin: 0 5px;
+}
+.ep_box .ep_item li .ep {
+    position: relative;
+    display: block;
+    margin-left: -1px;
+    margin-top: -1px;
+    height: 45px;
+    line-height: 45px;
+    border: 1px solid #ddd;
+    text-align: center;
+    color: #555;
+    font-size: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    z-index: 99;
+    padding: 0 10px;
+}
+.card_info .v_title .name .highlight{
+    font-size: 16px;
+}
+.card_info .v_btn {
+    float: left;
+    margin: 0 5px 5px 0;
+}
+.card_info .v_btn a:hover{
+	color:#fff
+}
+/*
+	//https://r1.ykimg.com/051000005A5D5F06ADC0AE209E02516E?x-oss-process=image/resize,w_530/format,webp/interlace,1
+	youku: 'https://r1.ykimg.com/051000005A5D5E3CADC0AE1B09011DC4',
+	iqiyi: 'https://r1.ykimg.com/051000005A5D5C49ADC0AE2B780A41E7',
+	sohu: 'https://r1.ykimg.com/051000005A5D5D6FADC0AE6BC9059433',
+	qq:'https://r1.ykimg.com/051000005A5D5F56ADC0AE18190B4E05',
+	imgo:'https://r1.ykimg.com/051000005A5D5F06ADC0AE209E02516E',//芒果TV
+	m1905:'https://r1.ykimg.com/051000005A65A64CADC0AED5960E3981',//电影网
+	cctv:'https://r1.ykimg.com/051000005A65A708ADC0AECA4B00B3DE',//CCTV
+	letv:'https://r1.ykimg.com/051000005A5D5EADADC0AE2B780900E4',//乐视
+*/
+.ico_soku {
+    background: url('http://static-new.soku.com/youku/static/soku/inthesky-aone/giantstar/m/img/logo.png?v=1.0.0') no-repeat;
+}
+.ico_youku {
+    //background: url('http://static-new.soku.com/youku/static/soku/inthesky-aone/giantstar/m/img/logo.png?v=1.0.0') no-repeat;
+    background: url('https://r1.ykimg.com/051000005A5D5E3CADC0AE1B09011DC4') no-repeat;
+}
+.ico_iqiyi {
+    background: url('https://r1.ykimg.com/051000005A5D5C49ADC0AE2B780A41E7') no-repeat;
+}
+.yk_logo .m_ico{
+    height: 25px;
+	background-size: cover;
+    margin-left: 10px;
+    width: 25px;
+}
+</style>
+</html>

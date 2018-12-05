@@ -1,0 +1,277 @@
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>vip视频在线解析</title>
+    <meta name="keywords" content="vip视频解析,vip视频在线解析,vip解析,万能vip视频解析,vip视频全能解析,vip视频,手机vip视频解析,手机在线解析vip视频,优酷vip解析,爱奇艺vip解析,腾讯vip解析,乐视vip解析,芒果vip解析,vip,免费,解析">
+    <meta name="description" content="好看的电影-无广告无弹窗口解析VIP视频免费看，在线解析，vip视频解析，优酷vip解析，爱奇艺vip解析，腾讯vip解析，乐视vip解析，芒果vip解析方便广大用户VIP视频服务，">
+	<link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//cdn.wandhi.com/style/tv/style.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="//lib.baomitu.com/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body background="//cdn.wandhi.com/image/tv/bj.png" style="padding-top: 50px">
+<div class="container">
+    <nav class="navbar navbar-fixed-top navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">vip视频在线解析</a></div>
+        </div>
+    </nav>
+</div>
+<div class="col-xs-12 col-sm-10 col-md-8 col-lg-7 center-block" style="float: none;">
+    <div class="col-md-14 column">
+        <div class="panel panel-default">
+            <div id="kj" class="panel-body">
+                <iframe style="margin-top:1px;background:#000 url('http://note.youdao.com/yws/api/personal/file/WEB3088e9e48f85bbef3bf258f7b0224992?method=download&inline=true&shareKey=5e9cdc31211077dfca24dc267af04346') no-repeat center;" id="player" width="100%" height="600px" allowTransparency="true" allowfullscreen="true" frameborder="0" scrolling="no"></iframe>
+            </div>
+        </div>
+        <div id="sdfdf" style="font-size: 14px;padding: 6px;display: none">
+            解析问题尝试更换接口！更换接口！更换接口！！！
+        </div>
+        <script>
+            if (navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i)) {
+                document.getElementById('sdfdf').style.display = 'block';
+            }
+        </script>
+    </div>
+    <div class="col-md-14 column">
+        <div class="input-group" style="width: 100%;">
+            <span class="input-group-addon input-lg" style="width: 80px;">地址</span>
+            <input class="form-control input-lg" id="url" type="search" placeholder="电脑使用Ctrl+V粘贴网址-手机直接长按粘贴网址" id="url" value="">
+			 <span class="input-group-btn">
+				<button class="btn btn-danger input-lg" type="button" onClick="$('#url').val('')">清空</button>
+				<button class="btn btn-success input-lg" type="button" onClick="switchUsingApi()">切换</button>
+				<button class="btn btn-primary input-lg" type="button" onClick="play()">全网</button>
+			  </span>
+		</div>
+        <br>
+        <div>
+            <button type="button" class="btn btn-success btn-lg btn-block" onClick="jiexi(false)">Go-点击开始解析(by随机-收集接口)</button>
+            <button type="button" class="btn btn-success btn-lg btn-block" onClick="jiexi(true)">New-点击全屏解析(by随机-收集接口)</button>
+        </div>
+    </div>
+    <div class="unit-100">
+        <div class="language">
+            <a class="btn2 btn-outline2" href="../js/video/search.html" rel="nofollow" target="_blank">返回搜索页面</a>
+			<a class="btn2 btn-outline2" href="http://www.youku.com/" rel="nofollow" target="_blank">进入优酷视频</a>
+            <a class="btn2 btn-outline2" href="http://www.iqiyi.com/" rel="nofollow" target="_blank">进入奇艺视频</a>
+            <a class="btn2 btn-outline2" href="http://v.qq.com/" rel="nofollow" target="_blank">进入腾讯视频</a>
+            <br>
+            <a class="btn2 btn-outline2" href="http://www.mgtv.com/" rel="nofollow" target="_blank">进入芒果视频</a>
+            <a class="btn2 btn-outline2" href="http://tv.sohu.com/" rel="nofollow" target="_blank">进入搜狐视频</a>
+			<a class="btn2 btn-outline2" href="http://www.le.com/" rel="nofollow" target="_blank">进入乐视视频</a>
+            <a class="btn2 btn-outline2" href="http://www.bilibili.com/" rel="nofollow" target="_blank">进入B站视频</a>
+		</div>
+	</div>
+<script type="text/javascript" src="../js/jiexi.js"></script>
+<script type="text/javascript">
+
+function randomIdx(len){
+	return parseInt(Math.random()*len);
+}
+function play(){
+	$('#player').attr('src',decodeFromHex('\x68\x74\x74\x70\x73\x3a\x2f\x2f\x76\x69\x70\x2e\x61\x72\x72\x6f\x6e\x2e\x77\x6f\x72\x6b\x65\x72\x73\x2e\x64\x65\x76\x2f')+$('#url').val());
+}
+//切换当前使用的解析接口类型：实时接口、收集整理标记的接口
+function switchUsingApi(){
+	window.using_tmp_api=!window.using_tmp_api;
+	if(using_tmp_api){
+		//使用实时接口
+		$('.btn-lg').each(function(i,e){
+			$(e).text($(e).text().replace('收集','实时'));
+		})
+		$('.btn-lg').removeClass('btn-success').addClass('btn-primary');
+	}else{
+		//使用收集到的接口
+		$('.btn-lg').each(function(i,e){
+			$(e).text($(e).text().replace('实时','收集'));
+		})
+		$('.btn-lg').removeClass('btn-primary').addClass('btn-success');
+	}
+}
+
+//获取具体接口地址
+function getUrl(url){
+	
+	if(url=='')return;
+	//获取站点对应的api列表对象
+	var site_apis = window['_'+getSite(url)];
+
+	if(site_apis && site_apis.length>0){
+		//if(location.search.indexOf('auto_play_next=true')>0 && site_apis.auto_play_next.length>0){
+		//	//使用自动播放下一级的接口
+		//	site_apis = site_apis.auto_play_next;
+		//}
+		//随机获取其中一个地址
+		return site_apis[parseInt(Math.random()*site_apis.length)].url+url;
+	}else{
+		if(!window.default_apis||window.default_apis.length==0){
+			//默认api
+			window.default_apis = jiexi_apis.filter(function(i,e){
+				return i.sites.length>5
+			});
+			//517解析:爱奇艺、优酷、乐视、芒果、搜狐、PPTV、华数tv、1905、咪咕、m3u8，MP4
+			default_apis.push('http://cn.bjbanshan.cn/jx.php?url=');
+		}
+		return default_apis[randomIdx(default_apis.length)].url + url;
+	}
+}
+
+//解析通过实时接口播放：from Ckplayer论坛 1个月内
+function byTempApi(video, opennew=false){
+	if(!window.tmp_apis || window.tmp_apis.length==0){
+		var url='https://bbs.ckplayer.com/search.php?mod=forum&searchid=58&orderby=lastpost&ascdesc=desc&searchsubmit=yes&kw=全网+解析+无广告+接口+http';
+		var data='method=0&host='+encodeURIComponent(url)+'&hideRAW=';
+
+		fetch("http://tool.chinaz.com/Tools/httptest.aspx",{
+			method:"post",
+			headers: {
+				"Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+			},
+			body: data //向服务端传入json数据
+		}).then(function (res) {
+			res.text().then(function (value) {				
+				var pattern = /[接口|地址].*?(\/\/[\w|\.]+(:\d+)?\/.*?\?\w+=)/g;
+				var groups = value.match(pattern);
+				window.tmp_apis = [];
+				for(var group of groups){
+					let _url =/[接口|地址].*?(\/\/[\w|\.]+(:\d+)?\/.*?\?\w+=)/.exec(group)[1];
+					if(_url.indexOf('stat')==-1 && !tmp_apis.includes(_url)){
+						tmp_apis.push(_url)
+					}
+				}
+				tmp_apis.push('http://cn.bjbanshan.cn/jx.php?url=');
+				if(opennew){
+					window.open(tmp_apis[randomIdx(tmp_apis.length)] + url, '_blank');
+				}else{
+					$('#player').attr('src',tmp_apis[randomIdx(tmp_apis.length)] + url);
+				}
+			})
+		})
+	}else{
+		if(opennew){
+			window.open(tmp_apis[randomIdx(tmp_apis.length)] + url, '_blank');
+		}else{
+			$('#player').attr('src',tmp_apis[randomIdx(tmp_apis.length)] + url);
+		}
+	}
+}
+
+//解析视频
+function jiexi(opennew=false) {
+	if(window.using_tmp_api){
+		byTempApi($("#url").val(), opennew);
+	}else{
+		var url = getUrl($("#url").val());
+		if(url && url!=''){
+			if(opennew){window.open(url, '_blank');
+			}else{
+				$('#player').attr('src',url);
+			}
+		}
+	}
+}
+
+var i=0
+function jiexi_test(apiurl) {
+	var site=apiurl||$('#jk option').eq(i).val();
+	iqiyi(site);
+	youku(site);
+	qq(site);
+	mgtv(site);
+	sohu(site);
+	leshi(site);
+	bilibili(site);
+	search(site);
+	i++;
+}
+
+function iqiyi(site){
+	if(!site) site=$('#jk option:selected').val();
+	window.open(site+'https://www.iqiyi.com/v_19rwu38yqw.html?vfrm=pcw_home&vfrmblk=G&vfrmrst=711219_home_zongyi_float_pic_play4', '_blank')
+}
+function youku(site){
+	if(!site) site=$('#jk option:selected').val();
+	window.open(site+'https://v.youku.com/v_show/id_XNDQyODk4MTgyMA==.html?spm=a2hbt.13141534.app.5~5!2~5!2~5~5~5!2~5~5!2~5!2~5!2~5~A!10&s=e438e14b3fa94613a1bb', '_blank')
+}
+function qq(site){
+	if(!site) site=$('#jk option:selected').val();
+	window.open(site+'https://v.qq.com/x/cover/fyxgdb78znsgkti/l0033m2raau.html?report_recomm_player=ptag%3Dv_qq_com%7Crtype%3Dcid%7CalgId%3D5419%7CbucketId%3DEXP%3APROFILE%3D747%7CNRBE%3D746%7CINDEX%3D1813%7CRANK%3Dbase%7CSELECTOR%3D1374%7CENGINE%3Dbase%7Creason%3Dscms_20190428006387%7CreasonType%3D%7Ccid%3Dfyxgdb78znsgkti%7Cvid%3D%7Cpid%3D%7Cmodule%3D%E6%AD%A3%E5%9C%A8%E7%83%AD%E6%92%AD%7CpageType%3DfilmIndex%7Cseqnum%3D5919344789_1586112508.846393_1840%7Cvideo_rec_report%3Dflush_num%3A%7Cis_insert%3A%7Cinsert_type%3A%7Cload_type%3A%7Ca_exp_id%3APROFILE-747%23NRBE-746%23INDEX-1813%23RANK-base%23SELECTOR-1374%23ENGINE-base%7Ca_src_key%3A100137%7Ca_seqnum%3A5919344789_1586112508.846393_1840%7Ca_area_code%3A%7Ca_scene_type%3A2%7Ce_module_type%3A410%7C%7Ca_module_id%3A20190428006387%7Ce_item_id%3Afyxgdb78znsgkti%7Ce_item_type%3A13%7Ce_item_mixid%3A%7Ca_alg_id%3A5419%7Ca_alg_type%3A410', '_blank')
+}
+function mgtv(site){
+	if(!site) site=$('#jk option:selected').val();
+	window.open(site+'https://www.mgtv.com/b/327194/4793419.html', '_blank')
+}
+function sohu(site){
+	if(!site) site=$('#jk option:selected').val();
+	window.open(site+'https://tv.sohu.com/v/MjAxODAxMDUvbjYwMDMzNDU1MC5zaHRtbA==.html', '_blank')
+}
+function leshi(site){
+	if(!site) site=$('#jk option:selected').val();
+	window.open(site+'http://www.le.com/ptv/vplay/2006112.html#vid=2006112', '_blank')
+}
+function bilibili(site){
+	if(!site) site=$('#jk option:selected').val();
+	window.open(site+'https://www.bilibili.com/bangumi/play/ep259092', '_blank')
+	window.open(site+'https://www.bilibili.com/bangumi/play/ep324181', '_blank')
+}
+function search(site){
+	if(!site) site=$('#jk option:selected').val();
+	window.open(site+'快乐大本营', '_blank')
+}
+
+
+//初始化完成后触发
+$(function () {
+	_youku=jiexi_apis.filter(function(item,index){
+		return item.sites.indexOf('youku')>=0;
+	});
+	_iqiyi=jiexi_apis.filter(function(item,index){
+		return item.sites.indexOf('iqiyi')>=0;
+	});
+	_qq=jiexi_apis.filter(function(item,index){
+		return item.sites.indexOf('qq')>=0;
+	});
+	_mgtv=jiexi_apis.filter(function(item,index){
+		return item.sites.indexOf('mgtv')>=0;
+	});
+	_sohu=jiexi_apis.filter(function(item,index){
+		return item.sites.indexOf('sohu')>=0;
+	});
+	_leshi=jiexi_apis.filter(function(item,index){
+		return item.sites.indexOf('leshi')>=0;
+	});
+	_bilibili=jiexi_apis.filter(function(item,index){
+		return item.sites.indexOf('bilibili')>=0;
+	});
+	////加载可以自动播放下一集的接口：不一定适用所有网站
+	//_youku.auto_play_next = _youku.filter(function(item,index){
+	//	return item.autoPlayNext;
+	//});
+	//_iqiyi.auto_play_next = _iqiyi.filter(function(item,index){
+	//	return item.autoPlayNext;
+	//});
+	//_qq.auto_play_next = _qq.filter(function(item,index){
+	//	return item.autoPlayNext;
+	//});
+	//_mgtv.auto_play_next = _mgtv.filter(function(item,index){
+	//	return item.autoPlayNext;
+	//});
+	//_sohu.auto_play_next = _sohu.filter(function(item,index){
+	//	return item.autoPlayNext;
+	//});
+	//_leshi.auto_play_next = _leshi.filter(function(item,index){
+	//	return item.autoPlayNext;
+	//});
+	//_bilibili.auto_play_next = _bilibili.filter(function(item,index){
+	//	return item.autoPlayNext;
+	//});
+	
+	if(location.search!=''){
+		$("#url").val(location.search.replace(/\?.*?url=/,''));
+		jiexi();
+	}
+});
+</script>
+</body>
+</html>

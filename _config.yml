@@ -1,0 +1,79 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: 龙轩的博客
+brief-intro: <a href="//github.com/arronlong/httpclientutil" target="_blank">httpclientutil</a>开源项目创建者，关注开源~
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://arronlong.com" # the base hostname & protocol for your site
+
+permalink: /:year/:month/:day/:title/
+
+# other links
+twitter_username: 
+facebook_username: 
+github_username:  Arronlong
+email: cclsuperstar@126.com
+weibo_username: arroncui
+zhihu_username: 
+linkedIn_username: 
+dribbble_username:
+
+description_footer: 所学知识，颗粒归仓！
+
+# comments
+# 三种评论插件，使用bootstrap tab插件来选择，通过各自的enable属性来确认是否启用
+gitalk: #国内大神自行开发，基于github issue，项目地址：https://github.com/gitalk/gitalk
+  enable: true
+  clientID: ddd0a7628407578cc7b0
+  clientSecret: ef5c7376d6c751371f75381a31ab1d9b6b081157
+  repo: arronlong.github.io
+  owner: arronlong
+  admin: arronlong
+  
+livere: #来必力，韩国的社会化评论系统，支持QQ、微信、微博、百度、微博等大部分国内社区账号
+  enable: true
+  livere_uid: arronlong
+  
+disqus: #国外用的最多的三方评论系统
+  enable: true
+  shortname: arronlong
+  
+leancloud: #统计浏览数
+  enable: true
+  app_id: QnBM6yOJ3FNW4wDsB7C3KGQb-gzGzoHsz
+  app_key: X8lnPhsuRVeBLgAsPmSYYiDi
+
+# statistic analysis 统计代码
+# 百度统计 id，将统计代码替换为自己的百度统计id，即
+# hm.src = "//hm.baidu.com/hm.js?xxxxxxxxxxxx";
+# xxxxx字符串
+baidu_tongji_id: 221ed678670b836e2791505812bf71dd
+google_analytics_id: UA-139223998-1 # google 分析追踪id
+
+# Build settings
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# port
+# port: 1234
+
+# url
+category_dir: category/
+tag_dir: tag/
+
+# excerpt
+excerpt_separator: "\n\n\n\n"
+
+# paginate
+gems: ['jekyll-paginate']
+
+# paginate
+paginate: 6

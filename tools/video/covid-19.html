@@ -1,0 +1,657 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>抗争2019-ncov，国家建立火神山、雷神山，千万云监工上线</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+	<link href="https://cdn.staticfile.org/dplayer/1.25.0/DPlayer.min.css" rel="stylesheet">
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		html,body{
+			height:100%;
+		}
+		body::-webkit-scrollbar {/*滚动条整体样式*/
+            width: 4px;     /*高宽分别对应横竖滚动条的尺寸*/
+            height: 4px;
+        }
+        body::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+            border-radius: 5px;
+            -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+            background: rgba(0,0,0,0.2);
+        }
+        body::-webkit-scrollbar-track {/*滚动条里面轨道*/
+            -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+            border-radius: 0;
+            background: rgba(0,0,0,0.1);
+        }
+		/*
+		.dplayer-subtitle a:hover{
+			max-width: 200px;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			display:inline-block;
+		}
+		*/
+	</style>
+</head>
+<body>
+<div class="container" style="width:100%;padding:0">
+    <div class="row" style="width:100%;padding:0;margin:0;"></div>
+</div>
+
+<!--//https://cdn.staticfile.org/ -->
+<!--//https://cdn.bootcss.com/ -->
+<script src="https://cdn.staticfile.org/hls.js/0.12.4/hls.min.js"></script>
+<script src="https://cdn.staticfile.org/dplayer/1.25.0/DPlayer.min.js"></script>
+<script src="https://cdn.staticfile.org/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/flv.js/1.5.0/flv.min.js"></script>
+<script src="https://cdn.staticfile.org/blueimp-md5/2.12.0/js/md5.min.js"></script>
+<script>
+
+//该页面仅限在http协议下使用，否则部分接口会受限
+if(location.protocol=='https:'){
+	location.protocol='http:';
+}
+//微博视频解析
+function c(c,d){var e=b(d),f='22f18e62a05fb5e4fe4000e6e97ced10';return c+'?'+e+'&sign='+a(e+f)}function b(a){var b=[];for(var c in a)(a[c]===0||a[c])&&b.push(c+'='+encodeURIComponent(a[c]));return b.join('&')}function a(a,b,c){function v(a,b,c){if(!b)return c?r(a):s(a);return c?t(b,a):u(b,a)}function u(a,b){return p(t(a,b))}function t(a,b){return o(q(a),q(b))}function s(a){return p(r(a))}function r(a){return n(q(a))}function q(a){return unescape(encodeURIComponent(a))}function p(a){var b='0123456789abcdef',c='',d,e;for(e=0;e<a.length;e+=1){d=a.charCodeAt(e);c+=b.charAt(d>>>4&15)+b.charAt(d&15)}return c}function o(a,b){var c,d=m(a),e=[],f=[],g;e[15]=f[15]=undefined;d.length>16&&(d=k(d,a.length*8));for(c=0;c<16;c+=1){e[c]=d[c]^909522486;f[c]=d[c]^1549556828}g=k(e.concat(m(b)),512+b.length*8);return l(k(f.concat(g),640))}function n(a){return l(k(m(a),a.length*8))}function m(a){var b,c=[];c[(a.length>>2)-1]=undefined;for(b=0;b<c.length;b+=1)c[b]=0;var d=a.length*8;for(b=0;b<d;b+=8)c[b>>5]|=(a.charCodeAt(b/8)&255)<<b%32;return c}function l(a){var b,c='',d=a.length*32;for(b=0;b<d;b+=8)c+=String.fromCharCode(a[b>>5]>>>b%32&255);return c}function k(a,b){a[b>>5]|=128<<b%32;a[(b+64>>>9<<4)+14]=b;var c,e,f,k,l,m=1732584193,n=-271733879,o=-1732584194,p=271733878;for(c=0;c<a.length;c+=16){e=m;f=n;k=o;l=p;m=g(m,n,o,p,a[c],7,-680876936);p=g(p,m,n,o,a[c+1],12,-389564586);o=g(o,p,m,n,a[c+2],17,606105819);n=g(n,o,p,m,a[c+3],22,-1044525330);m=g(m,n,o,p,a[c+4],7,-176418897);p=g(p,m,n,o,a[c+5],12,1200080426);o=g(o,p,m,n,a[c+6],17,-1473231341);n=g(n,o,p,m,a[c+7],22,-45705983);m=g(m,n,o,p,a[c+8],7,1770035416);p=g(p,m,n,o,a[c+9],12,-1958414417);o=g(o,p,m,n,a[c+10],17,-42063);n=g(n,o,p,m,a[c+11],22,-1990404162);m=g(m,n,o,p,a[c+12],7,1804603682);p=g(p,m,n,o,a[c+13],12,-40341101);o=g(o,p,m,n,a[c+14],17,-1502002290);n=g(n,o,p,m,a[c+15],22,1236535329);m=h(m,n,o,p,a[c+1],5,-165796510);p=h(p,m,n,o,a[c+6],9,-1069501632);o=h(o,p,m,n,a[c+11],14,643717713);n=h(n,o,p,m,a[c],20,-373897302);m=h(m,n,o,p,a[c+5],5,-701558691);p=h(p,m,n,o,a[c+10],9,38016083);o=h(o,p,m,n,a[c+15],14,-660478335);n=h(n,o,p,m,a[c+4],20,-405537848);m=h(m,n,o,p,a[c+9],5,568446438);p=h(p,m,n,o,a[c+14],9,-1019803690);o=h(o,p,m,n,a[c+3],14,-187363961);n=h(n,o,p,m,a[c+8],20,1163531501);m=h(m,n,o,p,a[c+13],5,-1444681467);p=h(p,m,n,o,a[c+2],9,-51403784);o=h(o,p,m,n,a[c+7],14,1735328473);n=h(n,o,p,m,a[c+12],20,-1926607734);m=i(m,n,o,p,a[c+5],4,-378558);p=i(p,m,n,o,a[c+8],11,-2022574463);o=i(o,p,m,n,a[c+11],16,1839030562);n=i(n,o,p,m,a[c+14],23,-35309556);m=i(m,n,o,p,a[c+1],4,-1530992060);p=i(p,m,n,o,a[c+4],11,1272893353);o=i(o,p,m,n,a[c+7],16,-155497632);n=i(n,o,p,m,a[c+10],23,-1094730640);m=i(m,n,o,p,a[c+13],4,681279174);p=i(p,m,n,o,a[c],11,-358537222);o=i(o,p,m,n,a[c+3],16,-722521979);n=i(n,o,p,m,a[c+6],23,76029189);m=i(m,n,o,p,a[c+9],4,-640364487);p=i(p,m,n,o,a[c+12],11,-421815835);o=i(o,p,m,n,a[c+15],16,530742520);n=i(n,o,p,m,a[c+2],23,-995338651);m=j(m,n,o,p,a[c],6,-198630844);p=j(p,m,n,o,a[c+7],10,1126891415);o=j(o,p,m,n,a[c+14],15,-1416354905);n=j(n,o,p,m,a[c+5],21,-57434055);m=j(m,n,o,p,a[c+12],6,1700485571);p=j(p,m,n,o,a[c+3],10,-1894986606);o=j(o,p,m,n,a[c+10],15,-1051523);n=j(n,o,p,m,a[c+1],21,-2054922799);m=j(m,n,o,p,a[c+8],6,1873313359);p=j(p,m,n,o,a[c+15],10,-30611744);o=j(o,p,m,n,a[c+6],15,-1560198380);n=j(n,o,p,m,a[c+13],21,1309151649);m=j(m,n,o,p,a[c+4],6,-145523070);p=j(p,m,n,o,a[c+11],10,-1120210379);o=j(o,p,m,n,a[c+2],15,718787259);n=j(n,o,p,m,a[c+9],21,-343485551);m=d(m,e);n=d(n,f);o=d(o,k);p=d(p,l)}return[m,n,o,p]}function j(a,b,c,d,e,g,h){return f(c^(b|~d),a,b,e,g,h)}function i(a,b,c,d,e,g,h){return f(b^c^d,a,b,e,g,h)}function h(a,b,c,d,e,g,h){return f(b&d|c&~d,a,b,e,g,h)}function g(a,b,c,d,e,g,h){return f(b&c|~b&d,a,b,e,g,h)}function f(a,b,c,f,g,h){return d(e(d(d(b,a),d(f,h)),g),c)}function e(a,b){return a<<b|a>>>32-b}function d(a,b){var c=(a&65535)+(b&65535),d=(a>>16)+(b>>16)+(c>>16);return d<<16|c&65535}return v(a,b,c)}
+
+//获取微博直播信息
+function byWeibo(object, errFun, nextFun){
+	var data = {
+		//id: $CONFIG.object_id,
+		id: object.id,
+		uid: '',
+		fr: 'h5',
+		expires: (new Date).getTime() + 36e5
+	};
+	//getAsyncApi(c('https://ing.weibo.com/api/live/flashplayinfo', data), function(msg){
+	$.getJSON('https://data.jianshukeji.com/jsonp?url='+encodeURIComponent(c('https://ing.weibo.com/api/live/flashplayinfo', data))+'&callback=?',function(msg){
+		//console.log(msg);
+		var url=msg.url;
+		if(msg.stream && msg.stream.length>1){
+			object.quality=[];				
+			for(var i=0;i<msg.stream.length;i++){
+				object.quality.push({
+					name: msg.stream[i].title,
+					url: msg.stream[i].url
+				});
+				if(msg.stream[i].default==1){
+					url=msg.stream[i].url;
+					object.defaultQuality=i;
+				}
+			}
+		}
+		object.url=url;
+		object.img=msg.image;
+		if(object.hasDanmaku)
+			object.danmaku_url='https://barrage.api.weibo.com/barrage/get_messages.json?source=446421924&room_id='+object.id+'&start_offset=';
+		play(object,document.getElementById(object.eleId), errFun, nextFun);
+	});
+}
+
+//异步：获取跨域的get请求
+function getAsyncApi(url,fun){
+	var data='method=0&host='+encodeURIComponent(url.replace('CURRENT_TIME_STAMP',new Date().getTime()))+'&hideRAW=';
+	var type = arguments[2] ? arguments[2] : (typeof fun == 'string'? fun:'JSON');
+	fetch('https://tool.chinaz.com/Tools/httptest.aspx',{
+		method:'post',
+		headers: {
+			'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+		},
+		body: data //向服务端传入json数据
+	}).then(function (res) {
+		res.text().then(function (value) {
+			var parser=new DOMParser();
+			var htmlDoc=parser.parseFromString(value, 'text/html');
+			var text=$(htmlDoc).find('.RtitCeCode pre').text();
+			if(type.toUpperCase()=='JSON'){
+				text=JSON.parse(text);
+			}
+			if(typeof fun =='function'){
+				fun(text);
+			}
+		})
+	})
+}
+
+//同步：获取远程api请求结果，get方式
+function getSyncApi(url,fun){
+	var data='method=0&host='+encodeURIComponent(url.replace('CURRENT_TIME_STAMP',new Date().getTime()))+'&hideRAW=';
+
+	var result = $.ajax({
+	 type: 'GET',
+	 url: 'https://tool.chinaz.com/Tools/httptest.aspx',
+	 data: data,
+	 async: false
+	});
+	var parser=new DOMParser();
+	var htmlDoc=parser.parseFromString(result.responseText, 'text/html');
+	var text=$(htmlDoc).find('.RtitCeCode pre').text();
+	var type = arguments[2] ? arguments[2] : (typeof fun == 'string'? fun:'JSON');
+	if(type.toUpperCase()=='JSON'){
+		text=JSON.parse(text);
+	}
+	if(typeof fun =='function'){
+		fun(text);
+	}
+	return text;
+}
+
+//通过异步get请求，获取直播地址，并进行解析
+function byGetApi(url,fun,object){
+	getAsyncApi(url,function(json){
+		var obj=fun(json);
+		var flag=false;
+		for(var o in obj){
+			if(obj[o]!=undefined){
+				if(typeof obj[o]=='string'){
+					eval('object.'+o+'="'+obj[o]+'"');
+				}else{
+					eval('object.'+o+'=obj[o];');
+				}
+				flag=true;
+			}
+		}
+		if(flag){
+			play(object,document.getElementById(object.eleId));
+		}
+	});
+}
+
+
+//针对人民网的直播json返回值解析
+function byPeopleCn(json){
+	var url;
+	var i=0;
+	for(;i<json.length;i++){
+		if(json[i].name.startsWith('火神山')){
+			break;
+		}
+		if(json[i].name.startsWith('雷神山')){
+			break;
+		}
+	}
+	
+	for(var j=0;j<json[i].address.internal_pc.length;j++){
+		if(json[i].address.internal_pc[j].resolution=='origin'){
+			url=json[i].address.internal_pc[j].address;
+			break;
+		}
+	}
+	return {url:url};
+}
+
+
+//针对人民网的直播json返回值解析
+function byBilibili(json){
+	var obj={};
+	var url;
+	obj.quality=[];
+	for(var i=0;i<json.data.play_url.durl.length;i++){
+		if(!url){
+			url=json.data.play_url.durl[i].url;
+		}
+		obj.quality.push({		
+			name: json.data.play_url.quality_description[0].desc,
+			url: json.data.play_url.durl[i].url
+		});
+	}
+	obj.url=url;
+	obj.defaultQuality=2;
+	return obj;
+}
+
+//----------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------
+
+function play(obj,container, errFun, nextFun){
+	var data={
+		container: container,
+		live: (obj.live==undefined ? true : obj.live),
+		mutex:false,//互斥，阻止多个播放器同时播放，当前播放器播放时暂停其他播放器
+		autoplay: true,//通过api启动
+		volume:0.8,
+		video:{
+			url:obj.url,
+			pic: obj.img,
+			muted: true, //默认静音
+		},
+	};
+	if(obj.quality){
+		data.video.quality=obj.quality;
+		data.video.defaultQuality=obj.defaultQuality;
+	}
+	if(obj.danmaku_url){//显示弹幕
+		data.danmaku={};
+	}
+	var switchVideo = false;
+	//判断是否存在，如存在则调用切换视频
+	var dp;
+	if(eval('typeof dp_'+$(container).attr('id')+' != "undefined"')){
+		dp = eval('dp_'+$(container).attr('id'));
+		dp.switchVideo(data.video);//切换视频
+		switchVideo = true;
+	}else{
+		dp=new DPlayer(data);
+	}
+	//var dp=new DPlayer(data);
+	eval('dp_'+$(container).attr('id')+'=dp;');
+	setTimeout(function(){
+		dp.play();
+		if(!switchVideo){//非切换视频，即第一次加载，才会调整是否为静音
+			if(obj.volume){
+				window.dp_default=dp; //记录默认dplayer对象
+				dp.video.muted=false;//静音
+			}else{
+				//dp.volume(0, false, false);
+				dp.video.muted=true;//静音
+			}
+		}
+		if(obj.fullScreen){//指定全屏的视频
+			dp.fullScreen.request('web');
+		}
+		$(container).find('.dplayer-subtitle').html('<a href="'+obj.src+'" target="_blank" title="'+obj.desc+'">'+(obj.desc)+'</a>');
+		if(obj.danmaku_url){
+			danmaku(dp, obj.danmaku_url);//开启弹幕
+		}
+	},500);
+	
+	//绑定错误或者结束事件
+	if(typeof errFun === 'function') dp.on('error', function(){
+		console.log(dp.container.id+'...error');
+		var object=eval('window["'+'dp.container.id+'.replace('dplayer','playlist').split('_').join('"]["')+']')
+		errFun(object);
+	});
+	if(typeof nextFun === 'function') dp.on('ended', function(){
+		if(dp.video.currentTime>=dp.video.duration){
+			console.log(dp.container.id+'...ended');
+			var object=eval('window["'+(dp.container.id.replace('dplayer','playlist').split('_').join('"]["'))+'"]')
+			nextFun(object);
+		}
+	});
+	
+}
+
+//获取并自动显示弹幕
+function danmaku(dp, url,offset=0){
+	try{
+		//var list = getSyncApi(url+offset).response.list;
+		//if(list.length>0){
+		//	auto_show_danmaku(dp, list,offset+list.length);
+		//}
+		$.getJSON('https://data.jianshukeji.com/jsonp?url='+encodeURIComponent(url+offset)+'&callback=?',function(msg){
+			if(msg.response.list && msg.response.list.length>0){
+				auto_show_danmaku(dp, msg.response.list,offset + msg.response.list.length);
+			}
+		});
+	}catch(err){}
+}
+
+//自动显示弹幕
+function auto_show_danmaku(dp, list,offset){
+	if(dp.paused){//暂停时，不加载新的弹幕，但仍需要回调自身，否则setTimeout过后，不再继续加载后续弹幕
+		setTimeout(function(){
+			auto_show_danmaku(dp, list,offset)
+		},5000); 
+		return
+	}
+	if(!list || list.length==0){//已显示完毕，则加载后续
+		setTimeout(function(){
+			danmaku(dp, list,offset)
+		},5000);
+		return;
+	}
+    var random = parseInt(Math.random()*list.length);
+	var content = list.splice(random,1)[0].data[0].content;
+    setTimeout(function(){
+		show_danmaku(dp, content);
+		auto_show_danmaku(dp, list,offset);
+	},Math.random()*5000)//5s内显示一个弹幕
+}
+
+//显示弹幕
+function show_danmaku(dp, content){
+	const danmaku_data = {
+		text: content,
+		color: randomColor(),//'#fff',
+		type: 'right',
+	};
+	dp.danmaku.draw(danmaku_data);
+}
+//随机颜色
+function randomColor() {
+    //var r = parseInt(Math.random()*256);
+    //var g = parseInt(Math.random()*256);
+    //var b = parseInt(Math.random()*256);
+    //
+    //var hex = "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+	var hex_arr = ["#fff","#ff0","#f0f","0ff","#f00","#0f0","00f"];
+	var hex = hex_arr[parseInt(Math.random()* hex_arr.length)];
+    return hex;
+}
+
+var playlist={
+	all:[],
+	huoshenshan:[
+		//{
+		//	type:'byPeopleApi',
+		//	desc:'人民网-火神山医院建设全记录',
+		//	img:'https://cdn13.mudu.tv/assets/upload/158029842322573.jpg',
+		//	src:'http://zhibo.people.cn/watch/4494855',
+		//	api:'http://zhibo.people.cn/activity/263815/videos?_=CURRENT_TIME_STAMP',
+		//},
+		//{
+		//	type:'directLink',
+		//	//url:'http://gctxyc.liveplay.myqcloud.com/gc/nywbwg01_1_md.m3u8',
+		//	url:'http://gctxyc.liveplay.myqcloud.com/gc/jyg02_1_md.m3u8',
+		//	desc:'央视网-武汉火神山医院-极速回放',
+		//	img:'https://p3.img.cctvpic.com/photoworkspace/2020/01/29/2020012908252432694.jpg',
+		//	src:'http://livechina.cctv.com/zby/index.shtml?id=INTEMyrWwhSrJyHyuMmILpsz200129',
+		//	api:'http://api.cntv.cn/list/getCboxLiveMessage?serviceId=cbox&id=INTEMyrWwhSrJyHyuMmILpsz200129&cb=cb3',
+		//},
+		{
+			type:'directLink',
+			url:'https://mp4playcloud-cdn.ysp.cctv.cn/f000069yp0n.afNb11002.mp4?vkey=AB79A868F8E987CA300658F249D2303D159C30569DA8725C2E188F4059491699281285EB4A5FD200DE1288B152B7331B1F7445E48B665589150E0980ABB695BDCB866E0897F570582ECB8B822127C15D0252EC29598FED07C616AF5DDC5A7C09AFF04EC449A848832C02558F577DBAF3',
+			desc:'央视频-全景见证武汉火神山医院崛起全过程',
+			img:'https://cover.yangshipin.cn/20200201/0756204709669/a6c4adccea9fc71379e2a4c0133753bd.webp',
+			src:'https://m.yangshipin.cn/video?type=2&pid=600016643',
+			api:''
+		},
+		//{
+		//	type:'directLink',
+		//	url:'https://mobilelive-play.ysp.cctv.cn/ysp/18ABC347132A5EC1CC8ED6DF58FFB24313AB3D856413D11A8A6C8EFBFC1CA8ADC431F6498C8A377CCC8FA5992C5821285F31D1EE788BD30B8EEE81D404FE30348F7D869EF0949C706225D56D97E3C2238969641BA75F0813F84CC664B962D3F4/2001891501_hd.m3u8?svrtime=1580558227&pid=600016618&cdn=5201&revoi=111AD4DA5AD21E41D3FED318814AF5444A0506FB04C8319CE0478D8086BC44001E05CE78822C397F740D670FF2D10399FC3132C00891AD6B479094F529A24279713A1740FB0304A0DF5FAFEE36A2F7B26D39361654CE287F728244746D9DD4E3974FE448E4862E180EC9AAD0F7C5AE85',
+		//	desc:'央视频-近景见证武汉火神山医院崛起全过程',
+		//	img:'https://cover.yangshipin.cn/20200201/0753266086341/04559313c147a663024d3448a4591cb1.webp',
+		//	src:'https://m.yangshipin.cn/video?type=2&pid=600016618',
+		//	api:''
+		//},
+		//{
+		//	type:'byWeibo',
+		//	desc:'微博[ING直播]-火神山医院建设中',
+		//	src:'http://live.weibo.com/show?id=1042152:4bf23c3764eba6c622b99e7dd10540f7',
+		//	id:'1042152:4bf23c3764eba6c622b99e7dd10540f7',
+		//},
+		//{
+		//	type:'byWeibo',
+		//	desc:'微博[央视网]-火神山医院-极速回放',
+		//	src:'http://live.weibo.com/show?id=1042152:1c17c89ec20b853fc570d5ed9ec03c9a',
+		//	id:'1042152:1c17c89ec20b853fc570d5ed9ec03c9a',
+		//},
+		//{
+		//	type:'byWeibo',
+		//	desc:'微博[人民网]-24小时直播：火神山医院建设现场',
+		//	src:'http://live.weibo.com/show?id=1042152:5d6e70bafdf9717238c856070ec5c4d4',
+		//	id:'1042152:5d6e70bafdf9717238c856070ec5c4d4',
+		//,
+		//{
+		//	type:'byWeibo',
+		//	desc:'微博[央视新闻]-武汉火神山医院建设现场',
+		//	src:'http://live.weibo.com/show?id=1042152:13c15bf82e01fb44ba968dd6241eae96',
+		//	id:'1042152:13c15bf82e01fb44ba968dd6241eae96',
+		//},
+		//{
+		//	type:'byWeibo',
+		//	desc:'微博[长江日报]-火神山医院建设进展',
+		//	src:'http://live.weibo.com/show?id=1042152:6c7fb0c80501a7f177b32470f2c2be71',
+		//	id:'1042152:6c7fb0c80501a7f177b32470f2c2be71',
+		//},
+	],
+	leishenshan:[
+		//{
+		//	type:'directLink',
+		//	url:'http://play-a.quklive.com/live/a1580195060766997.m3u8',
+		//	desc:'澎湃网-雷神山医院建设进展',
+		//	img:'http://img.quklive.com/broadcast/activity/1580195060766997/screenshot.jpg',
+		//	src:'http://cloud.quklive.com/cloud/a/embed/1580195060766997?autoPlay=true',
+		//},
+		//{
+		//	type:'byWeibo',
+		//	desc:'微博[央视新闻]-雷神山医院施工现场',
+		//	src:'http://live.weibo.com/show?id=1042152:809ea036d704e597fa2dd976f6564231',
+		//	id:'1042152:809ea036d704e597fa2dd976f6564231',
+		//},
+		{
+			type:'byWeibo',
+			desc:'微博[央视新闻]-共同战役',
+			src:'http://live.weibo.com/show?id=1042152:b7e02f08ef2a457d3669024ec9eb7a82',
+			id:'1042152:b7e02f08ef2a457d3669024ec9eb7a82',
+			volume:true,
+			full:true,
+		},
+		{
+			desc:'微博[央视新闻]-2020-03-20轮播',
+			playIdx:0,
+			next:function(obj){
+				if(!obj){
+					obj=this;
+				}
+				byWeibo(obj.sublist[obj.playIdx], obj.next, obj.next);
+				obj.playIdx = ++obj.playIdx % obj.sublist.length;
+			},
+			sublist:[
+				{
+					type:'byWeibo',
+					live:false,
+					desc:'四川医疗队-归程登机前-27分',
+					src:'http://live.weibo.com/show?id=1042152:e15425a3698795b4c7404e97dabe40a8',
+					id:'1042152:e15425a3698795b4c7404e97dabe40a8',
+					hasDanmaku:true,
+				},
+				{
+					type:'byWeibo',
+					live:false,
+					desc:'四川医疗队-踏上归程-1小时52分',
+					src:'http://live.weibo.com/show?id=1042152:df714661ae0d33e22f9ea8244bd73fea',
+					id:'1042152:df714661ae0d33e22f9ea8244bd73fea',
+					hasDanmaku:true,
+				},
+				{
+					type:'byWeibo',
+					live:false,
+					desc:'四川医疗队-返回成都-33分',
+					src:'http://live.weibo.com/show?id=1042152:0a75258491990bf7d2e2c588044f0486',
+					id:'1042152:0a75258491990bf7d2e2c588044f0486',
+					hasDanmaku:true,
+				},
+				{
+					type:'byWeibo',
+					live:false,
+					desc:'黑龙江医疗队-返回哈尔滨-23分',
+					src:'http://live.weibo.com/show?id=1042152:e04650a21dc2e460e3215bc54c8fa76d',
+					id:'1042152:e04650a21dc2e460e3215bc54c8fa76d',
+					hasDanmaku:true,
+				},
+				{
+					type:'byWeibo',
+					live:false,
+					desc:'广东医疗队-踏上归程-1小时40分',
+					src:'http://live.weibo.com/show?id=1042152:83cf4b86d9987ca2488d7421c9354513',
+					id:'1042152:83cf4b86d9987ca2488d7421c9354513',
+					hasDanmaku:true,
+				},
+				{
+					type:'byWeibo',
+					live:false,
+					desc:'广西医疗队-踏上归程',
+					src:'http://live.weibo.com/show?id=1042152:be6c2289fcaef5abc5d9785c95efd23a',
+					id:'1042152:be6c2289fcaef5abc5d9785c95efd23a',
+					hasDanmaku:true,
+				},
+				{
+					type:'byWeibo',
+					live:false,
+					desc:'山东医疗队-返回济南-27分',
+					src:'http://live.weibo.com/show?id=1042152:2c65792841d3c0375141531a7c690980',
+					id:'1042152:2c65792841d3c0375141531a7c690980',
+					hasDanmaku:true,
+				},
+				{
+					type:'byWeibo',
+					live:false,
+					desc:'多地医疗队-踏上归程-2小时50分',
+					src:'http://live.weibo.com/show?id=1042152:93f0b6f21168b8975a224ed19bdffc5b',
+					id:'1042152:93f0b6f21168b8975a224ed19bdffc5b',
+					hasDanmaku:true,
+				},
+			]
+		},
+		//{
+		//	type:'byPeopleApi',
+		//	desc:'人民网-雷神山医院建设全记录',
+		//	img:'https://cdn13.mudu.tv/assets/upload/158029842322573.jpg',
+		//	src:'http://zhibo.people.cn/watch/4494855',
+		//	api:'http://zhibo.people.cn/activity/263815/videos?_=CURRENT_TIME_STAMP',
+		//},
+		//{
+		//	type:'byWeibo',
+		//	desc:'微博[人民网]-24小时直播：雷神山医院建设现场',
+		//	src:'http://live.weibo.com/show?id=1042152:8704dc59121e68b6bf5908c7afbc80ac',
+		//	id:'1042152:8704dc59121e68b6bf5908c7afbc80ac',
+		//},
+		{
+			type:'directLink',
+			url:'http://gctxyc.liveplay.myqcloud.com/gc/jyg02_1_md.m3u8',
+			desc:'央视网-武汉雷神山医院',
+			img:'https://p1.img.cctvpic.com/photoworkspace/2020/01/29/2020012914522428022.jpg',
+			src:'http://livechina.cctv.com/zby/index.shtml?id=INTEMyrWwhSrJyHyuMmILpsz200129',
+			api:'http://api.cntv.cn/list/getCboxLiveMessage?serviceId=cbox&id=INTEMyrWwhSrJyHyuMmILpsz200129&cb=cb3',
+		},
+		{
+			type:'directLink',
+			url:'https://mobilelive-play.ysp.cctv.cn/ysp/DD39A6BC3D48D560454D9F609A33E86A76992848982CDE57DE6D652FE1FFD3EC12676EEDFA8C076878EE26E0B16F751BA58571C21983DAE40155822B88333A6039F1AD11189F2AC15F0BF4CAEDB1EF5D4D97D196217C5DA1DDAA87959DBD2ADE/2001893301_hd.m3u8?svrtime=1580558400&pid=600016637&cdn=5201&revoi=DFDAE11FF84B36FDC6D8A253C01F9256313FAD1EFBAAB0DB2CF57ADE73F4E29D534A895FF3468B48B9D4ABF52E517F268F1E97CFD5CFC2B90D5A46B0CF2B7BB33FB7293CE57DEB6FB3F207AF9975A73A489B024304C30D12AAC7A85268DEB14F574319EBAC396366041E257A43316C28',
+			desc:'央视频-全景直击武汉雷神山医院建设最前线',
+			img:'https://cover.yangshipin.cn/20200201/0754347386353/0b02fc168e2a8619cc073e69a09a6ab5.webp',
+			src:'https://m.yangshipin.cn/video?type=2&pid=600016637',
+			api:'',
+		},
+		{
+			type:'directLink',
+			url:'https://mobilelive-play.ysp.cctv.cn/ysp/654EEA7C244EF70926983E67D88ED2EB361C825123C11A018F401AA3AF8F43D49059741B7233FEB248B8535623A4C3ED05242D804C15D5FBF25E2279034EC36531D6F84A13102EC94B96246651C28051CC11B7DF0BFF2F6A201269250A40DBCE/2001893201_hd.m3u8?svrtime=1581046058&pid=600016636&cdn=5201&revoi=5954C4D1186D9FF6E370DA07E4FBF2FECD8430A7546C904EF47E2C4CD67DCBF7BFE3BA297842FD6067FA1E8C4A188D17062DE2CA72B5BC0AD0DF5B9C10B860AF45DE37F47B37C4867282A10DAFAFA8D950CB72B6D18B4B40FA5282A8494451B2D8B1034AFD95BAA4FAA9D59735BE4FC2',
+			desc:'央视频-近景直击武汉雷神山医院建设最前线',
+			img:'https://cover.yangshipin.cn/20200201/0755336474639/e97bbd2846643de68a8270acb38f5d14.webp',
+			src:'https://m.yangshipin.cn/video?type=2&pid=600016636',
+			api:'',
+		},
+		//{
+		//	type:'byWeibo',
+		//	desc:'微博[央视网]-雷神山医院',
+		//	src:'http://live.weibo.com/show?id=1042152:5446fdf3a610f166741e296c5ec5db84',
+		//	id:'1042152:5446fdf3a610f166741e296c5ec5db84',
+		//},
+		//{
+		//	type:'byWeibo',
+		//	desc:'微博[ING直播]-雷神山医院建设中',
+		//	src:'http://live.weibo.com/show?id=1042152:59e1a580aa95fd40e44a7c1d5e30e102',
+		//	id:'1042152:59e1a580aa95fd40e44a7c1d5e30e102',
+		//},
+		//{
+		//	type:'byBilibili',
+		//	desc:'B站[央视新闻]-长镜头直播：武汉此时此刻',
+		//	src:'https://live.bilibili.com/5440',
+		//	api:'https://api.live.bilibili.com/xlive/web-room/v1/index/getRoomPlayInfo?room_id=5440&play_url=1&mask=1&qn=0&platform=web'
+		//},
+	],
+	jingqu:[
+		{
+			type:'byWeibo',
+			desc:'云赏樱 10:00~16:00',
+			src:'http://live.weibo.com/show?id=1042152:256bbf37cfd90e2f15a909534fd1ea27',
+			id:'1042152:256bbf37cfd90e2f15a909534fd1ea27',
+		},
+		{
+			type:'byWeibo',
+			live:false,
+			desc:'云游兵马俑',
+			src:'http://live.weibo.com/show?id=1042152:6232dfaa27f27f9c53e59fb4190ba9a0',
+			id:'1042152:6232dfaa27f27f9c53e59fb4190ba9a0',
+		},
+	]
+};
+
+//视频列表播放
+function play_list(list,list_name,lastfull=true){
+	var start=0;
+	if(!list_name){
+		//随机名字
+		list_name='abcdefghijklmnopqrstuvwxyz'.substr(parseInt(Math.random()*10),parseInt(Math.random()*10)+3);
+	}
+	if($('div[id^=dplayer_'+list_name+']').length>0){
+		var last=$('div[id^=dplayer_'+list_name+']').last();
+		if(last.parent().hasClass('col-md-12') && !last.parent().hasClass('full')){
+			last.parent().removeClass('col-md-12').addClass('col-md-6');
+		}
+		start=parseInt(last.attr('id').split('').reverse().join(''))+''.split('').reverse().join('')+1;
+	}
+	var t=0;
+	for(var i=0;i<list.length;i++,t++){
+		var flag=lastfull && i>=list.length-1;
+		var id='dplayer_'+list_name+'_'+(i+start)+'';
+		$('div.row').append('<div class="col-md-'+(list[i].full || (flag && t%2==0)?12:6)+(list[i].full?' full':'')+'" style="padding:0"><div id="'+id+'"></div></div>');
+		if(list[i].full)t--;
+		if(list[i].sublist){
+			list[i].eleId=id;
+			for(var j=0;j<list[i].sublist.length;j++){
+				list[i].sublist[j].eleId=id;
+			}
+			//随机选择
+			list[i].playIdx = parseInt(Math.random()*list[i].sublist.length);
+			list[i].next();
+		}else{
+			if(list[i].type=='byWeibo'){
+				list[i].eleId=id;
+				byWeibo(list[i]);
+			}else if(list[i].type=='byPeopleApi'){
+				list[i].eleId=id;
+				byGetApi(list[i].api,byPeopleCn,list[i]);	
+			}else if(list[i].type=='byBilibili'){
+				list[i].eleId=id;
+				byGetApi(list[i].api,byBilibili,list[i]);			
+			}else{
+				play(list[i],document.getElementById(id));
+			}
+		}
+	}
+}
+
+var dp_default;
+play_list(playlist.all,'all');
+play_list(playlist.leishenshan,'leishenshan');
+play_list(playlist.huoshenshan,'huoshenshan');
+play_list(playlist.jingqu,'jingqu');
+
+$('div[id*=dplayer_]').mouseenter(function(){
+	var dp = eval('dp_'+this.id);
+	if(dp_default) dp_default.video.muted = true;//静音
+	dp.video.muted = false;//非静音
+});
+$('div[id*=dplayer_]').mouseleave(function(){
+	var dp = eval('dp_'+this.id);
+	if(!dp.fullScreen.isFullScreen("web") && !dp.fullScreen.isFullScreen()){//非全屏时，再切换默认
+		if(dp_default) dp_default.video.muted = false;//非静音
+		if(!dp_default || dp_default.container.id!=dp.container.id){//当前非默认，才静音
+			dp.video.muted = true;//静音
+		}
+	}
+});
+</script>
+</body>
+<style>
+.dplayer-subtitle {
+    //position: absolute;
+    bottom: 12px;
+    width: 55%;
+    left: 27%;
+    text-align: center;
+    color: #00f8ff;
+    text-shadow: 0.5px 0.5px 0.5px rgba(0,0,0,.5);
+    font-size: 17px;
+	z-index: 999;
+}
+</style>
+</html>

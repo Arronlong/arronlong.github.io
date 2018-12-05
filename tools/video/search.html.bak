@@ -1,0 +1,351 @@
+<html>
+<head>
+<meta name="data-spm" content="a2h0k">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<title>搜库</title>
+<link type="text/css" rel="stylesheet" href="//static-new.soku.com/youku/static/soku/inthesky-aone/giantstar/m/css/reset.css" />
+<link type="text/css" rel="stylesheet" href="//static-new.soku.com/youku/static/soku/inthesky-aone/giantstar/m/css/m.css?v=1.0.0" />
+<link type="text/css" rel="stylesheet" href="//static-new.soku.com/youku/static/soku/inthesky-aone/giantstar/m/css/m_comm.css?v=1.0.0" />
+<link rel="stylesheet" type="text/css" href="//static-new.soku.com/youku/static/soku/inthesky-aone/giantstar/m/css/m_dir.css"/>
+</head>
+
+<body data-spm="8191393">
+
+<div id="bodydiv" class="yk-m">
+	<header class="yk_header">
+	<div class="yk_cont">
+		<div class="yk_wrap">
+			<div class="yk_btn">
+				<a class="m_ico btn_search" onclick="doQuery();"></a>
+			</div>
+			<div class="yk_logo">
+				<a class="" href="../video/search.html" title="搜库"><span class="m_ico ico_soku"></span></a>
+			</div>
+			<div class="yk_search">
+				<div class="yk_so">
+					<input type="text" name="q" id="headq" accesskey="s" autocomplete="off" value="冰糖炖雪梨" maxlength="200">
+					<a class="m_ico ico_cancel" id="inputcancel" style="display: "></a>
+				</div>
+				<div id="id_xbox"></div>
+			</div>
+		</div>
+	</div>
+</header>
+<script>
+$(".yk_header").after('<div class="yk_dir" data-type="moreContent"><div id="direct_touch" class="yk_card" ></div><div class="ep_box" style="height:0px;"></div></div><div class="m_mask" style="display:none;"></div>')
+</script>
+<!-- <div class="yk-container"> -->
+<div class="yk_dir" data-type="moreContent">
+	<div id="direct_touch" class="yk_card" >
+		<div class="card_bd clearfix">
+			<div class="card_func">
+				<div class="v_img">
+					<img src="https://r1.ykimg.com/050E00005E461502859B5E267D041758" />
+				</div>
+			</div>
+			<div class="card_info">
+				<div class="v_info">
+					<h2 class="v_title">
+						<a href="#">
+							<span class="name"><span class="name c_highred">冰糖</span><span class="name c_highred">炖</span><span class="name c_highred">雪梨</span></span>
+						</a>
+					</h2>
+					<div class="v_desc">
+						<p>
+							<span>电视剧</span>
+							<span>2020</span>
+							<span>吴倩/张新成</span>
+						</p>
+						<p>
+							<span class="c_highorange">更新至7集</span>
+						</p>
+					</div>
+				</div>
+				<div class="v_play">
+					<div class="v_btn">
+						<a class="btn_blue" href="https://v.youku.com/v_show/id_XNDU5MTk5MjM1Ng==.html">播放</a>
+					</div>
+					<div class="v_pe"><a class="btn_pe" data-pe="423269" href="javascript:;">选集</a></div>
+					<div class="v_pos">
+						<img src="//static-new.soku.com/youku/static/soku/inthesky-aone/giantstar/img/favicon/youku.png" />
+						<span>优酷</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<a class="card_link" href="https://v.youku.com/v_show/id_XNDU5OTI3OTQ4OA==.html"></a>
+	</div>
+	<!-- 选集  -->
+	<div class="ep_box" style="height:0px;">
+		<div class="ep_hd">
+			<span class="tit">冰糖炖雪梨</span>
+			<span class="act">
+				<a href="javascript:;">
+					<i class="m_ico ico_close"></i>
+				</a>
+			</span>
+		</div>
+		
+		<div class="ep_bd">
+			<div class="ep_item">
+			</div>
+		</div>
+	</div>
+	<!-- 选集暗色背景遮掩 -->
+	<div class="m_mask" style="display:none;"></div>
+</div>
+<!-- </div> --><!-- container end -->
+<div class="yk_result _sk_content">
+	<div class="yk_filter">
+		<div class="yk_hd">
+			<div class="sub_tab">
+				<ul>
+					<li data_od="1" class="on"><a href="https://www.soku.com/m/y/video?q=%E5%86%B0%E7%B3%96%E7%82%96%E9%9B%AA%E6%A2%A8&ld=0&site=14&_lg=10&od=1">综合排序</a></li>
+					<li data_od="2" class=""><a href="https://www.soku.com/m/y/video?q=%E5%86%B0%E7%B3%96%E7%82%96%E9%9B%AA%E6%A2%A8&ld=0&site=14&_lg=10&od=2">最新发布</a></li>
+					<li data_od="3" class=""><a href="https://www.soku.com/m/y/video?q=%E5%86%B0%E7%B3%96%E7%82%96%E9%9B%AA%E6%A2%A8&ld=0&site=14&_lg=10&od=3">最多播放</a></li>
+					</ul>
+			</div>
+			<div class="filter_handle">
+				<span>筛选</span>
+				<i class="m_ico ico_arrow"></i>
+			</div>
+		</div>
+		<div class="yk_bd">
+			<div class="filter_panel clearfix" style="display: none;">
+				<div class="filter_item">
+					<a data_lt="0" class="on" href="https://www.soku.com/m/y/video?q=%E5%86%B0%E7%B3%96%E7%82%96%E9%9B%AA%E6%A2%A8&od=1&ld=0&site=14&_lg=10&lt=0&sfilter=1">不限</a>
+					<a data_lt="4" class="" href="https://www.soku.com/m/y/video?q=%E5%86%B0%E7%B3%96%E7%82%96%E9%9B%AA%E6%A2%A8&od=1&ld=0&site=14&_lg=10&lt=4&sfilter=1">60分钟以上</a>
+					<a data_lt="3" class="" href="https://www.soku.com/m/y/video?q=%E5%86%B0%E7%B3%96%E7%82%96%E9%9B%AA%E6%A2%A8&od=1&ld=0&site=14&_lg=10&lt=3&sfilter=1">30-60分钟</a>
+					<a data_lt="2" class="" href="https://www.soku.com/m/y/video?q=%E5%86%B0%E7%B3%96%E7%82%96%E9%9B%AA%E6%A2%A8&od=1&ld=0&site=14&_lg=10&lt=2&sfilter=1">10-30分钟</a>
+					<a data_lt="1" class="" href="https://www.soku.com/m/y/video?q=%E5%86%B0%E7%B3%96%E7%82%96%E9%9B%AA%E6%A2%A8&od=1&ld=0&site=14&_lg=10&lt=1&sfilter=1">0-10分钟</a>
+				</div>
+				<div class="filter_item">
+					<a data_hd="0" class="on" href="https://www.soku.com/m/y/video?q=%E5%86%B0%E7%B3%96%E7%82%96%E9%9B%AA%E6%A2%A8&od=1&ld=0&site=14&_lg=10&hd=0&sfilter=1">不限</a>
+					<a data_hd="1" class="" href="https://www.soku.com/m/y/video?q=%E5%86%B0%E7%B3%96%E7%82%96%E9%9B%AA%E6%A2%A8&od=1&ld=0&site=14&_lg=10&hd=1&sfilter=1">高清</a>
+					<a data_hd="6" class="" href="https://www.soku.com/m/y/video?q=%E5%86%B0%E7%B3%96%E7%82%96%E9%9B%AA%E6%A2%A8&od=1&ld=0&site=14&_lg=10&hd=6&sfilter=1">超清</a>
+					<a data_hd="7" class="" href="https://www.soku.com/m/y/video?q=%E5%86%B0%E7%B3%96%E7%82%96%E9%9B%AA%E6%A2%A8&od=1&ld=0&site=14&_lg=10&hd=7&sfilter=1">1080P</a>
+					</div>
+				<div class="filter_item">
+					<a data_site="14" class="on" href="https://www.soku.com/m/y/video?q=%E5%86%B0%E7%B3%96%E7%82%96%E9%9B%AA%E6%A2%A8&_lg=10&site=14&sfilter=1">优酷</a>
+					<a data_site="1" class="" href="https://www.soku.com/m/y/video?q=%E5%86%B0%E7%B3%96%E7%82%96%E9%9B%AA%E6%A2%A8&_lg=10&site=1&sfilter=1">土豆</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div style="height: 55px; display: none;"></div>
+
+	<div class="yk_vtotal">
+		<p>共找到 <span class="highlight">2,091</span> 个视频</p>
+	</div>
+
+	<div class="v" needrequest="t" nextpage="2" keyword="冰糖炖雪梨">
+		<div class="v-thumb">
+			<div class="v-pic">
+				<img alt="冰糖cp不期而遇 再邂逅擦出别样火花" src="//vthumb.ykimg.com/054101015E7481DA8B6C0696A644B56D" title="冰糖cp不期而遇 再邂逅擦出别样火花">
+			</div>
+			<div class="v-mask"></div>
+			<div class="v-tagrb"><span class="v-time">02:07</span></div>
+		</div>
+		<div class="v-meta">
+			<div class="v-title">
+				<a href="//v.youku.com/v_show/id_XNDU5NjMyODI0OA==.html?from=s7.8-1.2" title="冰糖cp不期而遇 再邂逅擦出别样火花" target="_blank"><span class="highlight">冰糖</span>cp不期而遇 再邂逅擦出别样火花</a>
+			</div>
+			<div class="v-desc">
+				<div class="v-desc-col">
+					<i class="m_ico ico_user"></i>
+					爱豆表情
+				</div>
+			</div>
+			<div class="v-desc">
+				<div class="v-desc-col">
+					<i class="m_ico ico_time"></i>
+					<span class="v-num">2天前</span>
+				</div>
+			</div>
+		</div>
+		<a class="v-link-box" title="冰糖cp不期而遇 再邂逅擦出别样火花" target="_blank" href="//v.youku.com/v_show/id_XNDU5NjMyODI0OA==.html?from=s7.8-1.2"></a>
+	</div>
+	<div class="clearfix"></div>
+	
+	<div class="v-load _sk_more">展开更多</div>
+</div>
+
+</div>
+<div class="sidebar" id="sideBar" style="display: block; opacity: 1;">
+	<ul>
+		<li><a id="btn-gotop"><i class="ico-gotop"></i></a></li>
+		<li><a id="btn-feedback"><i class="ico-feedback"></i></a></li>
+	</ul>
+</div>
+</body>
+
+<script type="text/javascript" src="//static-new.soku.com/youku/static/soku/inthesky-aone/giantstar/js/jquery.js"></script>
+<script type="text/javascript">
+var loadJs = new LoadJs();
+loadJs.include([
+	{
+		"src":"//static-new.soku.com/youku/static/soku/inthesky-aone/giantstar/js/sk-plugins.js",
+		"callback":function(){
+			loadJs.include([{
+				"src":"//static-new.soku.com/youku/static/soku/inthesky-aone/giantstar/m/js/m_tool.js",
+				"callback":function(){
+					sideBar.init();
+					FilterControl.init();
+					VideoListContrl.init();
+					//控制无结果页 显示的UGC大词图片高度不一致
+					ResponseMode.init();
+					//主题直达区，和M版10秒高潮
+					ThemeControl.init();
+				}}
+			]);
+			$.account.init({
+				"loginId":"loginId",
+				"logoutId":"logoutId",
+				"registerId":"registerId",
+				"themes" : false == true ? ['ff6602','ffb687'] : ["0aa5dd","c0eaf6"],
+				"success":function(userinfo){
+					
+				}
+			});
+		}
+	},
+	{
+		"src":"//static-new.soku.com/youku/static/soku/inthesky-aone/giantstar/m/js/iscroll.js",
+		"callback":function(){
+			if($('#YKSlidePerson').length ==1)
+				var YKSlidePerson = new iScroll('YKSlidePerson',{hScrollbar:false,vScrollbar:false,vScroll:false,bounce:true});
+			if($('#YKSlideProgramme').length ==1)
+				var YKSlideProgramme = new iScroll('YKSlideProgramme',{hScrollbar:false,vScrollbar:false,vScroll:false,bounce:true});
+			if ($('#themeList').length == 1)
+				var themeList = new iScroll('themeList', {hScrollbar: false,vScrollbar: false, vScroll: false,bounce: true});
+			if ($('#shortVideoThemeList').length == 1)
+				var shortVideoThemeList = new iScroll('shortVideoThemeList', {hScrollbar: false,vScrollbar: false, vScroll: false,bounce: true});
+		}
+	},
+	{
+		"src":"//static-new.soku.com/youku/static/soku/inthesky-aone/giantstar/js/sk-box.js",
+		"callback":function(){
+			XBox.init({
+				"site":51,
+				"cancelId":"inputcancel",
+				"history":true
+			});
+		}
+	}
+]);
+
+</script>
+
+<script type="text/javascript">
+$("div.v").live("touchstart",function(){
+	$("div.v").removeClass("current");
+	$(this).addClass("current");
+});
+$("div.v").live("touchend",function(){
+	$(this).removeClass("current");
+});
+
+$("div._sk_more").live("click",function(){
+	var workscoll = $("div._sk_content");
+	var lastvideo = $("div._sk_content div.v:last");
+	var od = $("div._sk_content div.sub_tab li.on").attr("data_od") || "1";
+	var site = $("div._sk_content a[data_site].on").attr("data_site") || "0";
+	var lt = $("div._sk_content a[data_lt].on").attr("data_lt") || "0";
+	var hd = $("div._sk_content a[data_hd].on").attr("data_hd") || "0";
+	var kw = $.trim(lastvideo.attr("keyword"));
+	var nextpage = lastvideo.attr("nextpage");
+	var needrequest = lastvideo.attr("needrequest");
+	if(kw == "" || needrequest != "t") return;
+
+	var loading = $('<div class="v-loading _sk_load">正在加载 ...<em class="v-loading32"></em></div>');
+	var more = $("<div class=\"v-load _sk_more\">展开更多</div>")
+	$.skAjax({
+		url:"https://www.soku.com/m/y/video_ajax",
+		data:{"q":kw,"site":site,"cp":nextpage,"ps":20,"od":od,"lt":lt,"hd":hd,"noqc":"0"},
+		beforeSend:function(){
+			workscoll.find("div._sk_more").remove();
+			loading.appendTo(workscoll);
+		},
+		success:function(tab){
+			workscoll.find("div._sk_load").remove();
+			if($.trim(tab) == ""){
+				if(lastvideo[0]){
+					lastvideo.attr("needrequest","f");
+					$("div._sk_more").remove();
+				}
+			}else{
+				$(tab).appendTo(workscoll);
+				var last = workscoll.find("div.v:last");
+				if(last[0] && "t" == last.attr("needRequest")){
+					more.appendTo(workscoll);
+				}
+			}
+		},
+		error:function(){
+			workscoll.find("div._sk_load").remove();
+		}
+	});
+});
+</script>
+
+<!-- m版UGC大词 -->
+<script type="text/javascript" src="../js/film.js"></script>
+<script>
+//加载提示列表
+function loadSuggest(arr){
+	$(".about_list").html('<ul />');
+	var num=["","one","two","three","four","five",]
+	for(var word of arr){
+		$(".about_list ul").append('<li class="'+num[word.i]+'" qword="'+word.w+'"><a href="javascript:void(0);"><i class="dot" sk_live="word">'+word.i+'</i><span class="name">'+word.w+'</span></a></li>');
+	}
+	$(".about_list ul li").on('mouseenter',function(){
+		$(".about_list ul li").removeClass('current');
+		$(this).addClass("current");
+	})
+	$(".about_list ul li a").off('click').on('click',function(){
+		$("#headq").val($(this).parent().attr('qword'));
+		XBox.hide();
+		doQuery();
+	});
+	$(".about_list ul").append('<li class="close" sk_live="close"><a sk_live="close">关闭</a></li>');
+}
+$("#headq").on('focus',function(){
+	$("#id_xbox div").first().show();
+	if($("#headq").val().length>0){
+		//suggestByYouku($("#headq").val(), loadSuggest);
+		suggestByIqiyi($("#headq").val(), loadSuggest);
+	}else{
+		if($("a#inputcancel").is(':visible')){
+			$("a#inputcancel").trigger('click')
+		}else{
+			XBox.hide();
+			$("a#inputcancel").trigger('click')
+			$("#id_xbox div").first().show();
+		}
+	}
+});
+//实时监听输入框变化
+$("#headq").on('input propertychange',function(){
+	if($("#headq").val().length>0){
+		//suggestByYouku($("#headq").val(), loadSuggest);
+		suggestByIqiyi($("#headq").val(), loadSuggest);
+	}
+});
+
+function doQuery() {
+	searchByYouku($("#headq").val(),function(videos){
+		for(var video of videos){
+			
+		}
+	});
+}
+</script>
+<style>
+.yk_kubox .about_list li a {
+    height: 24px;
+}
+</style>
+</html>

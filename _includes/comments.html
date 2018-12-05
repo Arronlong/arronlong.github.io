@@ -1,0 +1,95 @@
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<div class="comments">
+	<ul id="myTab" class="nav nav-tabs">
+		{% if site.gitalk.enable %}
+			<li class="active">
+				<a href="#gitalk" data-toggle="tab">
+					 Gitalk-github账号评论
+				</a>
+			</li>
+		{% endif %}
+		{% if site.livere.enable %}
+			<li>
+				<a href="#laibili" data-toggle="tab">
+					来必力-QQ|微信|微博|百度|豆瓣账号评论
+				</a>
+			</li>
+		{% endif %}
+		{% if site.disqus.enable %}
+			<li>
+				<a href="#disqus" data-toggle="tab">
+					Disqus评论
+				</a>
+			</li>
+		{% endif %}
+	</ul>
+	<div id="myTabContent" class="tab-content">
+		<div class="tab-pane fade in" id="gitalk">
+			<!-- Gitalk 评论 start  -->
+			{% if site.gitalk.enable %}
+			<!-- Link Gitalk 的支持文件  -->
+			<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+			<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+
+			<div id="gitalk-container"></div>
+			<script type="text/javascript">
+				var gitalk = new Gitalk({
+				// gitalk的主要参数
+					clientID: '{{site.gitalk.clientID}}',
+					clientSecret: '{{site.gitalk.clientSecret}}',
+					repo: '{{site.gitalk.repo}}',
+					owner: '{{site.gitalk.owner}}',
+					admin: ['{{site.gitalk.admin}}'],
+					id: window.location.pathname+'-{{page.title}}',
+					distractionFreeMode: true,    
+				});
+				gitalk.render('gitalk-container');
+			</script> 
+			{% endif %}
+			<!-- Gitalk end -->
+		</div>
+		<div class="tab-pane fade in" id="laibili">
+			{% if site.livere.enable %}
+			<!-- 来必力City版安装代码 -->
+			<div id="lv-container" data-id="city" data-uid="MTAyMC80NDAwNS8yMDU0MQ==">
+			<script type="text/javascript">	
+			   (function(d, s) {
+				   var j, e = d.getElementsByTagName(s)[0];
+				   if (typeof LivereTower === 'function') { return; }
+				   j = d.createElement(s);
+				   j.src = '//cdn-city.livere.com/js/embed.dist.js';
+				   j.async = true;
+				   e.parentNode.insertBefore(j, e);
+			   })(document, 'script');
+			</script>
+			<noscript> 为正常使用评论功能请激活JavaScript</noscript>
+			</div>
+			<!-- City版安装代码已完成 -->       
+			{% endif %}
+		</div>
+		<div class="tab-pane fade in" id="disqus">
+			{% if site.disqus.enable %}
+			<div id="disqus_thread"></div>
+			<script>
+				var disqus_config = function() {
+					this.page.url = '{{ site.url }}{{ page.url }}'; // Replace PAGE_URL with your page's canonical URL variable
+					this.page.identifier = '{{ site.url }}{{ page.url }}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+				};
+				(function(d, s) {
+					var j, e = d.getElementsByTagName(s)[0];
+					if (typeof LivereTower === 'function') { return; }
+					j = d.createElement(s);
+					j.src = '//{{site.disqus.shortname}}.disqus.com/embed.js';
+					j.setAttribute('data-timestamp', +new Date());
+					e.parentNode.insertBefore(j, e);
+				})(document, 'script');
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+			{% endif %}
+		</div>
+	</div>
+</div>
+<script>
+$("div.tab-pane.fade").first().addClass("active");
+</script>

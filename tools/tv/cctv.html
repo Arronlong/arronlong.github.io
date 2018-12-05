@@ -1,0 +1,87 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CCTV直播</title>
+<link type="text/css" rel="stylesheet" href="http://r.img.cctvpic.com/newcctv/tv/live/cctv3/style/style.css?ef202838b31d8a791e1b126b8980d1b2"/><script type="text/javascript" src="http://r.img.cctvpic.com/photoAlbum/templet/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="http://js.player.cntv.cn/creator/swfobject.js"></script>
+<script type="text/javascript" src="http://js.player.cntv.cn/creator/liveplayer.js"></script>
+<script src="http://p1.img.cctvpic.com/photoAlbum/templet/common/DEPA1567091909687313/cctvnew-jquery.tinyscrollbar.js" type="text/javascript" charset="utf-8"></script>
+<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+			width:100%;
+			height:100%;
+		}
+</style>
+</head>
+<body style="background-color','#000">
+<div id="player">
+</div>
+</body>
+<script>
+if(location.protocol=="https:"){
+	location.protocol="http:";
+}
+if(location.href.indexOf("tv.cctv.com/live")==-1){
+	var concatstr=location.href.indexOf("?")==-1?'?':'&';
+	location.href=location.href+concatstr+"_s1_=tv.cctv.com/live"+(new Date().getTime());
+}
+function GetQueryString(name) {
+	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+	var r = window.location.search.substr(1).match(reg);
+	if (r != null)
+		return decodeURIComponent(r[2]);
+	return null;
+}
+zhiboliu=GetQueryString("channel");
+function isDrmLegalDomainUrl() {return true;}
+//播放器
+var _player_width = '100%';
+var _player_height = '100%';
+zhiboliu=zhiboliu || 'cctv1';
+var isHttps = "true";
+//var isHttps = location.href.split("/")[0].indexOf("https")>0 ? "true" : "false";
+var playerParas = {
+   divId: "player",   /*播放器容器id，必填项*/
+   w: _player_width,   /*播放器宽度，必填项*/
+   h: _player_height,   /*播放器高度，必填项*/
+   t: zhiboliu,   /*台名称，比如cctv1,cctv13等，必填项*/
+   st: "",   /*回看或时移的开始时间，也可以用秒表示的10位时间戳*/
+   et: "",  /*回看或时移的结束时间.如果是时移，该参数可以为空*/
+   isAutoPlay: "true",   /*是否自动播放，只有false为不自动播放，其它值为自动播放*/
+   ruleVisible: "true",   /*是否显示时移尺子，默认true表示显示*/
+   br: "",  /*设置默认码率*/
+   posterImg: "",   /*播放器前贴图片*/
+   isLive4k: "false",  /*是否为4k播放器，true是4k,false不是*/
+   isHttps: isHttps,  /*是否https视频，true是,false不是*/
+   wmode: "opaque",   /*flash播放器的窗口模式，默认为opaque*/
+   hasBarrage: "false",  /*是否有弹幕功能，默认false，false时不显示弹幕、不显示弹幕设置按钮、不显示弹幕开关、不访问弹幕接口和表情包配置接口e*/
+   playerType : "live",   /*播放器类型，small表示小窗播放器*/
+   webFullScreenOn: "true",   /*是否显示网页全屏按钮，默认true表示显示*/
+   isLeftBottom: "false",  /*播放按钮是否在播放器左下角,为true表示是，false表示播放按钮在播放器中间*/
+	language: "",  /*语言，默认中文，en表示英语*/
+   others: ""   /*其它待定参数*/
+};
+
+createLivePlayer(playerParas);
+
+function pageFull(){
+	var ele=$('embed');
+	if(ele.length>0){
+		while(ele.length>0){
+			ele.height('100%').width('100%');
+			ele=ele.parent();
+		}
+	}
+	var timer=setInterval(function(){
+		var ele=$("#player_pagefullscreen_player");
+		if(ele.length>0){
+			ele.trigger('click');
+			window.clearInterval(timer);
+		}
+	},30)
+}
+pageFull();
+</script>
+</html>
